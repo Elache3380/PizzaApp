@@ -4,7 +4,12 @@ using System.Text;
 
 namespace PizzaApp.Entities.Models
 {
-    class Topping
+    public class Topping
     {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public ICollection<PizzaTopping> PizzaToppings { get; set; }
     }
 }
