@@ -4,7 +4,12 @@ using System.Text;
 
 namespace PizzaApp.Data.Data
 {
-    class DbInitializer
+    public class DbInitializer
     {
+        public static void Initialize(PizzaAppContext context)
+        {
+            context.Database.EnsureCreated();
+        }
+
     }
 }

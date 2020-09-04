@@ -7,9 +7,9 @@ using System.Text;
 
 namespace PizzaApp.Data.ModelsConfiguration
 {
-    public class PizzaConfiguration : IEntityTypeConfiguration<Pizza>
+    public class PizzaToppingConfiguration : IEntityTypeConfiguration<PizzaTopping>
     {
-        public void Configure(EntityTypeBuilder<Pizza> builder)
+        public void Configure(EntityTypeBuilder<PizzaTopping> builder)
         {
             throw new NotImplementedException();
         }
