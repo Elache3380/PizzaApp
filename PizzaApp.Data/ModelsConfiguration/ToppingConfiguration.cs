@@ -11,7 +11,13 @@ namespace PizzaApp.Data.ModelsConfiguration
     {
         public void Configure(EntityTypeBuilder<Topping> builder)
         {
-            throw new NotImplementedException();
+            builder.HasMany(t => t.PizzaToppings)
+               .WithOne(pt => pt.Topping)
+               .HasForeignKey(pt => pt.ToppingId)
+               .IsRequired(true)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Property(t => t.Name).HasMaxLength(250);
         }
     }
 }
