@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PizzaApp.Data\PizzaApp.Data.csproj" />
+    <ProjectReference Include="..\ServiceLayer\PizzaApp.ServiceLayer.csproj" />
   </ItemGroup>
 
 

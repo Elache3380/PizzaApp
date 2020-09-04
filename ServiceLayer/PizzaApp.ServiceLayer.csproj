@@ -6,9 +6,9 @@
 
   <ItemGroup>
     <Folder Include="PizzaServices\Helpers\" />
-    <Folder Include="PizzaServices\TransfertObjects\" />
+    <Folder Include="PizzaToppingServices\Helpers\" />
+    <Folder Include="PizzaToppingServices\TransfertObject\" />
     <Folder Include="ToppingServices\Helpers\" />
-    <Folder Include="ToppingServices\TransfertObjects\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\PizzaApp.Entities.csproj" />
+    <ProjectReference Include="..\PizzaApp.Data\PizzaApp.Data.csproj" />
   </ItemGroup>
 
 </Project>
