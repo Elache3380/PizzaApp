@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="PizzaServices\Helpers\" />
+    <Folder Include="PizzaServices\TransfertObjects\" />
+    <Folder Include="ToppingServices\Helpers\" />
+    <Folder Include="ToppingServices\TransfertObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\PizzaApp.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
