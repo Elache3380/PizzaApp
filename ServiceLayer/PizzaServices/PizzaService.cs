@@ -22,11 +22,12 @@ namespace PizzaApp.ServiceLayer.PizzaServices
         {
             var pizzas = _pizzaAppContext.Pizzas
                 .AsNoTracking()
+                .Include(t => t.PizzaToppings).ThenInclude(pt => pt.Topping)
                 .Select(p => new PizzaDto
                 {
                     Id = p.Id,
                     Name = p.Name,
-                    Toppings = p.PizzaToppings
+                    Toppings = (ICollection<Topping>)p.PizzaToppings.Select(pt => pt.Topping != null).ToList()
                 });
 
             return await pizzas.ToListAsync();
@@ -35,11 +36,12 @@ namespace PizzaApp.ServiceLayer.PizzaServices
         {
             var pizza = _pizzaAppContext.Pizzas
                 .AsNoTracking()
+                .Include(t => t.PizzaToppings).ThenInclude(pt => pt.Topping)
                 .Select(p => new PizzaDto
                 {
                     Id = p.Id,
                     Name = p.Name,
-                    Toppings = p.PizzaToppings
+                    Toppings = p.PizzaToppings.Where(pt => pt.PizzaId == id).Select(pt => pt.Topping).ToList()
                 })
                 .FirstOrDefaultAsync(p => p.Id == id);
 

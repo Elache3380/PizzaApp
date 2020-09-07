@@ -11,6 +11,6 @@ namespace PizzaApp.ServiceLayer.PizzaServices.TransfertObjects
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<PizzaTopping> Toppings { get; set; }
+        public ICollection<Topping> Toppings { get; set; }
     }
 }

@@ -12,7 +12,9 @@ namespace PizzaApp.ServiceLayer.PizzaServices
     {
         Task<IReadOnlyCollection<PizzaDto>> GetAllPizzasAsync();
         Task<PizzaDto> GetPizzaAsync(int id);
-        Task PostPizzaAsync(Pizza pizza);
+        Task PostPizzaAsync(Pizza pizza); 
+        //TODO : Le pilote ici est un pilote idenique à la Db, 
+        //or, ce pilote vient du consommateur, ne dois-je pas en faire un Dto?
         Task UpdatePizzaAsync(Pizza pizza);
         Task DeletePizzaAsync(int? id);
     }

@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PizzaApp.Data.Data;
 using PizzaApp.ServiceLayer.PizzaServices;
+using PizzaApp.ServiceLayer.ToppingServices;
 
 namespace PizzaApp.Api
 {
@@ -31,6 +32,7 @@ namespace PizzaApp.Api
             services.AddControllers();
 
             services.AddTransient<IPizzaService, PizzaService>();
+            services.AddTransient<IToppingService, ToppingService>();
 
             var localConnectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<PizzaAppContext>(options => options.UseSqlServer(localConnectionString));
